@@ -22,4 +22,5 @@ urlpatterns = [
     path('contact/', views.contact),
     path('regular-page/', views.regular_page),
     path('single-blog/', views.single_blog),
+    path('fake', views.fa)
 ]
