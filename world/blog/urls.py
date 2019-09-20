@@ -17,10 +17,10 @@ from . import views
 from django.urls import path
 
 urlpatterns = [
-    path('', views.home),
+    path('', views.home, name='home'),
     path('catagory/', views.catagory),
     path('contact/', views.contact),
     path('regular-page/', views.regular_page),
-    path('single-blog/', views.single_blog),
+    path('<int:article_id>/detail/', views.single_blog, name='detail'),
     path('fake', views.fa)
 ]

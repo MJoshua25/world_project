@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import *
 from faker import Faker
 from random import randint
@@ -24,8 +24,15 @@ def contact(request):
 def regular_page(request):
     return render(request, 'pages/regular-page.html')
 
-def single_blog(request):
-    return render(request, 'pages/single-blog.html')
+def single_blog(request, article_id):
+    try:
+        article = Article.objects.get(pk=int(article_id))
+        data = {
+            'article': article,
+        }
+        return render(request, 'pages/single-blog.html', data)
+    except:
+        return redirect('home')
 
 
 def fa (request):
