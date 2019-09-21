@@ -16,7 +16,13 @@ def home(request):
     return render(request, 'pages/index.html', data)
 
 def catagory(request):
-    return render(request, 'pages/catagory.html')
+    category=Category.objects.filter(statut=True)[:4]
+    article=Article.objects.filter(statut=True)[:6]
+    data={
+        'category':category,
+        'article':article,
+    }
+    return render(request, 'pages/catagory.html', data)
 
 def contact(request):
     return render(request, 'pages/contact.html')

@@ -20,7 +20,7 @@
                                 {% for cat in category   %}
                                     {% if forloop.counter <= 6 %}
                                         <li class="nav-item">
-                                                <a class="nav-link" id="tab{{  forloop.counter|add:'1' }}" data-toggle="tab" href="#world-tab-{{ forloop.counter|add:'1' }}" role="tab" aria-controls="{{ forloop.counter|add:'1'}}" aria-selected="false"> {{ cat.nom }} </a>
+                                            <a class="nav-link" id="tab{{  forloop.counter|add:'1' }}" data-toggle="tab" href="#world-tab-{{ forloop.counter|add:'1' }}" role="tab" aria-controls="{{ forloop.counter|add:'1'}}" aria-selected="false"> {{ cat.nom }} </a>
                                         </li>
                                     {% endif %}
                                 {% endfor %}

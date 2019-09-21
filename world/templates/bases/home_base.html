@@ -48,7 +48,7 @@
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="{% url 'home' %}">Home</a>
-                                        <a class="dropdown-item" href="catagory.html">Catagory</a>
+                                        <a class="dropdown-item" href="{% url 'category' %}">Catagory</a>
                                         <a class="dropdown-item" href="single-blog.html">Single Blog</a>
                                         <a class="dropdown-item" href="regular-page.html">Regular Page</a>
                                         <a class="dropdown-item" href="contact.html">Contact</a>
@@ -100,14 +100,14 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="hero-post-slide">
-                            {% for item in art_acc %}
+                            {% for item in article_acceuil %}
                             <!-- Single Slide -->
                             <div class="single-slide d-flex align-items-center">
                                 <div class="post-number">
                                     <p>{{ forloop.counter }}</p>
                                 </div>
                                 <div class="post-title">
-                                    <a href="single-blog.html">{{ item.titre }}</a>
+                                    <a href="{% url 'detail' item.id %}">{{ item.titre }}</a>
                                 </div>
                             </div>
                             {% endfor %}
